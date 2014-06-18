@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.deanishe.alfred-network-location</string>
+	<key>connections</key>
+	<dict>
+		<key>924B1653-1A8D-4D88-B618-8D972A2C93B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE8A26BA-D592-4643-A6C0-622B3B4AFA3D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C548AB66-5E3A-4FDE-9357-8379F7B19007</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Network preferences</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>924B1653-1A8D-4D88-B618-8D972A2C93B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dean Jackson</string>
+	<key>description</key>
+	<string>Change your network location</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Network Location</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "System Preferences"
+    reveal pane "com.apple.preference.network"
+	activate
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>111</integer>
+				<key>keyword</key>
+				<string>netloc</string>
+				<key>runningsubtext</key>
+				<string>Loading locations…</string>
+				<key>script</key>
+				<string>/usr/bin/python netloc.py list "{query}"</string>
+				<key>subtext</key>
+				<string>View and activate network locations</string>
+				<key>title</key>
+				<string>Network Location</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C548AB66-5E3A-4FDE-9357-8379F7B19007</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query} is now the active location</string>
+				<key>title</key>
+				<string>Changed Network Location</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FE8A26BA-D592-4643-A6C0-622B3B4AFA3D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python netloc.py set "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>924B1653-1A8D-4D88-B618-8D972A2C93B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>View, filter and activate Network Locations from within Alfred.</string>
+	<key>uidata</key>
+	<dict>
+		<key>924B1653-1A8D-4D88-B618-8D972A2C93B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>BD429F25-7136-4B87-92D3-8704B9F4E98E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C548AB66-5E3A-4FDE-9357-8379F7B19007</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FE8A26BA-D592-4643-A6C0-622B3B4AFA3D</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
