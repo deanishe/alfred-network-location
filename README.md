@@ -2,6 +2,10 @@
 
 View and change your network location from Alfred.
 
+## Installation ##
+
+Grab the workflow file from the [releases page](https://github.com/deanishe/alfred-network-location/releases) or [Packal](http://www.packal.org/workflow/network-location).
+
 ## Usage ##
 
 - `netloc [<query>]` — Show list of network locations filtered by `<query>` if one is specified
