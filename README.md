@@ -2,6 +2,8 @@
 
 View and change your network location from Alfred.
 
+![](https://raw.githubusercontent.com/deanishe/alfred-network-location/master/screenshot.png "")
+
 ## Installation ##
 
 Grab the workflow file from the [releases page](https://github.com/deanishe/alfred-network-location/releases) or [Packal](http://www.packal.org/workflow/network-location).
