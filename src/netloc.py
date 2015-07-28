@@ -77,7 +77,7 @@ def do_list_locations(wf, query=None):
 
 def do_set_location(wf, location):
     """Change to location ``location``"""
-    subprocess.call(['networksetup', '-switchtolocation', location],
+    subprocess.call(['/usr/sbin/networksetup', '-switchtolocation', location],
                     stdout=subprocess.PIPE)
     print(location.encode('utf-8'), end='')
 

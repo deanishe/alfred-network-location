@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>net.deanishe.alfred-network-location</string>
+	<key>category</key>
+	<string>System</string>
 	<key>connections</key>
 	<dict>
 		<key>924B1653-1A8D-4D88-B618-8D972A2C93B4</key>
