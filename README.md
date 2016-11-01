@@ -1,6 +1,8 @@
-# Network Location workflow for Alfred 2 #
 
-View and change your network location from Alfred.
+Network Location workflow for Alfred
+====================================
+
+View and change your network location from [Alfred 2 & 3][alfred].
 
 ![](https://raw.githubusercontent.com/deanishe/alfred-network-location/master/screenshot.png "")
 
@@ -19,3 +21,6 @@ Grab the workflow file from the [releases page](https://github.com/deanishe/alfr
 ## Licence ##
 
 This workflow is released under the [MIT Licence](http://opensource.org/licenses/MIT).
+
+
+[alfred]: https://www.alfredapp.com/
