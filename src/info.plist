@@ -17,18 +17,12 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>C548AB66-5E3A-4FDE-9357-8379F7B19007</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Open Network preferences</string>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>924B1653-1A8D-4D88-B618-8D972A2C93B4</string>
@@ -36,6 +30,18 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Network Preferences</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -52,64 +58,11 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>tell application "System Preferences"
-    reveal pane "com.apple.preference.network"
-	activate
-end tell</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>111</integer>
-				<key>keyword</key>
-				<string>netloc</string>
-				<key>runningsubtext</key>
-				<string>Loading locations…</string>
-				<key>script</key>
-				<string>/usr/bin/python netloc.py list "{query}"</string>
-				<key>subtext</key>
-				<string>View and activate network locations</string>
-				<key>title</key>
-				<string>Network Location</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>C548AB66-5E3A-4FDE-9357-8379F7B19007</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
+				<true/>
 				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
 				<false/>
 				<key>text</key>
 				<string>{query} is now the active location</string>
@@ -121,15 +74,68 @@ end tell</string>
 			<key>uid</key>
 			<string>FE8A26BA-D592-4643-A6C0-622B3B4AFA3D</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>111</integer>
+				<key>keyword</key>
+				<string>netloc</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading locations…</string>
+				<key>script</key>
+				<string>python netloc.py list "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>View and activate network locations</string>
+				<key>title</key>
+				<string>Network Location</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C548AB66-5E3A-4FDE-9357-8379F7B19007</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>/usr/bin/python netloc.py set "{query}"</string>
+				<string>/usr/bin/python netloc.py set "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -138,7 +144,33 @@ end tell</string>
 			<key>uid</key>
 			<string>924B1653-1A8D-4D88-B618-8D972A2C93B4</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "System Preferences"
+    reveal pane "com.apple.preference.network"
+	activate
+end tell</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BD429F25-7136-4B87-92D3-8704B9F4E98E</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -147,26 +179,36 @@ end tell</string>
 	<dict>
 		<key>924B1653-1A8D-4D88-B618-8D972A2C93B4</key>
 		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
 			<key>ypos</key>
-			<real>130</real>
+			<integer>50</integer>
 		</dict>
 		<key>BD429F25-7136-4B87-92D3-8704B9F4E98E</key>
 		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>190</integer>
 		</dict>
 		<key>C548AB66-5E3A-4FDE-9357-8379F7B19007</key>
 		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>50</integer>
 		</dict>
 		<key>FE8A26BA-D592-4643-A6C0-622B3B4AFA3D</key>
 		<dict>
+			<key>xpos</key>
+			<integer>610</integer>
 			<key>ypos</key>
-			<real>130</real>
+			<integer>50</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>2.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/deanishe/alfred-network-location</string>
 </dict>
 </plist>
